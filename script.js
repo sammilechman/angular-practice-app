@@ -1,6 +1,7 @@
 var myApp = angular.module('myApp', []);
 
 myApp.controller("UserCtrl", ['$scope', 'Math', function($scope, Math){
+  $scope.greeting = 'Welcome, Sam Milechman';
   $scope.user = {};
   $scope.user.details = {
     "username": "Sam Milechman",
@@ -24,4 +25,17 @@ myApp.service("Math", function() {
   this.addOne = function(x) {
     return x + 1;
   };
+});
+
+myApp.filter('reverse', function() {
+  return function(input, uppercase) {
+    var out = '';
+    for (var i = 0; i < input.length; i++) {
+      out = input.charAt(i) + out;
+    }
+    if (uppercase) {
+      out = out.toUpperCase();
+    }
+    return out;
+  }
 });

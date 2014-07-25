@@ -7,16 +7,23 @@
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body ng-app="myApp">
-  <h3>
+  <h1>
     Angular Practice Application
-  </h3>
+  </h1>
 
   <div ng-controller="UserCtrl">
+    <p><strong>An example of controllers to access data:</strong></p>
+    <p><em>These can be defined inside of a controller (not used here) or outside of a controller (used here).</em></p>
     <p class="username">Welcome, {{ user.details.username }}</p>
-    <p class="id">User ID: {{ user.details.id }}</p>
+    <p class="id">User ID: {{ user.details.id }}</p><br>
+    <p><strong>An example of controllers + filter defined outside controller</strong></p>
+    <ul>
+      <li>Unfiltered: {{ greeting }}</li>
+      <li>Reversed: {{ greeting | reverse }}</li>
+    </ul>
   </div>
 
   <a custom-button>Click Me</a>
-  
+
 </body>
 </html>
